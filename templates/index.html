@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+  <!-- Make it compatible to mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Titanic Disaster, Who survived?</title>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Titanic Disaster Survivor prediction</h1>
+
+     <!-- Action is where the data is sent. In our case, predict page.
+     If action is omitted, it assumed to be the current page -->
+     <form action="{{ url_for('predict') }}"method="post">
+      <label for="PassengerId">PassengerId</label>
+    	<input type="text" name="PassengerId" required="required" /></p>
+      <label for="Pclass">Pclass</label>
+        <input type="text" name="Pclass" required="required" /><p>
+          <label for="Sex">Sex 0: Female/ 1:Male</label>
+            <input type="text" name="Sex" required="required" /></p>
+            <label for="Age">Age</label>
+                <input type="text" name="Age" required="required" /></p>
+                <label for="SibSp">SibSp</label>
+                <input type="text" name="SibSp" required="required" /></p>
+                <label for="Parch">Parch</label>
+              <input type="text" name="Parch" required="required" /></p>
+              <label for="Fare">Fare</label>
+              <input type="text" name="Fare" required="required" /></p>
+              <label for="Embarked">Embarked 1:S, 2:C, 3:Q</label>
+              <input type="text" name="Embarked" required="required" /></p>
+            
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Survivor</button></p>
+    </form>
+
+    <style>
+      * {
+    margin: 10px;
+    }
+
+    body {
+        background-color: lightgray;
+    }
+
+    h1 {
+        color: brown;
+        text-align: center;
+    }
+
+    h3 {
+        color: brown;
+        text-align: center;
+    }
+
+    form {
+        text-align: center;
+    }
+
+    label {
+        color: brown;
+        font-size: larger;
+        font: bolder;
+    }
+        
+    button {
+        color: white;
+        background: blue;
+        font-size: large;
+        outline: blue;
+    }
+
+
+
+    </style>
+
+   <br>
+   <br>
+   <h3>
+   {{ prediction_text }} </h3>
+
+ </div>
+
+
+</body>
+</html>
