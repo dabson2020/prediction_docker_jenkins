@@ -1,2 +1,1 @@
-FROM hshar/webapp
-ADD ./var/www/html
+web: gunicorn app:app
